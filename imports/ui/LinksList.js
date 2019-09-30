@@ -15,7 +15,6 @@ export default class LinksList extends React.Component {
     };
   }
   componentDidMount() {
-    console.log('componentDidMount LinksList');
     this.linksTracker = Tracker.autorun(() => {
       Meteor.subscribe('links');
       const links = Links.find({
@@ -25,7 +24,6 @@ export default class LinksList extends React.Component {
     });
   }
   componentWillUnmount() {
-    console.log('componentWillUnmount LinksList');
     this.linksTracker.stop();
   }
   renderLinksListItems() {

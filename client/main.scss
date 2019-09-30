@@ -1,1 +1,44 @@
-@import './../imports/client/styles/main';
+html,
+body {
+  display: -ms-flexbox;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.addlanc{
+  margin-top: 3rem;
+}
+
+.betwenBtns{
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_content{
+  margin: 0 25%;
+}
+
+.box-view{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 85vh;
+}
+
+.boxed-view__box {
+  max-width: 27rem;
+  padding: 2.4rem;
+  text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+  -webkit-appearance: none;
+  
+}
+input[type=number] { 
+ -moz-appearance: textfield;
+ appearance: textfield;
+
+}
+
+

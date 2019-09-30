@@ -2,7 +2,6 @@ import { Meteor } from 'meteor/meteor'
 import ReactDOM from 'react-dom';
 import { Tracker } from 'meteor/tracker';
 import { routes, onAuthChange } from '../imports/routes/routes';
-import { Session } from 'meteor/session';
 
 import '../imports/startup/simple-schema-confs';
 
@@ -12,6 +11,5 @@ Tracker.autorun(() => {
 });
 
 Meteor.startup(() => {
-  Session.set('showVisible',  true);
   ReactDOM.render(routes, document.getElementById("app"));
 });

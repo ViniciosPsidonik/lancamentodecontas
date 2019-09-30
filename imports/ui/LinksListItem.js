@@ -61,6 +61,5 @@ LinksListItem.propTypes = {
   userId: React.PropTypes.string.isRequired,
   visible: React.PropTypes.bool.isRequired,
   shortUrl: React.PropTypes.string.isRequired,
-  visitedCount: React.PropTypes.number.isRequired,
   lastVisitedAt: React.PropTypes.number
 };

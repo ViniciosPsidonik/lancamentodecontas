@@ -3,16 +3,16 @@ import React from 'react';
 import { Router, Route, browserHistory } from 'react-router';
 
 import Signup from './../ui/Signup';
-import Link from './../ui/Link';
+import Lancamentos from '../ui/Lancamentos';
 import Login from './../ui/Login';
 import NotFound from './../ui/NotFound';
 
 const unathenticatedPages = ['/', '/signup'];
-const authenticatedPages = ['/links'];
+const authenticatedPages = ['/lancamentos'];
 
 const onEnterPublicPage = () => {
   if (Meteor.userId()) {
-    browserHistory.replace("/links");
+    browserHistory.replace("/lancamentos");
   }
 }
 
@@ -25,7 +25,7 @@ const onEnterPrivatePage = () => {
 export const routes = (
   <Router history={browserHistory}>
     <Route path="/signup" component={Signup} onEnter={onEnterPublicPage} />
-    <Route path="/links" component={Link} onEnter={onEnterPrivatePage} />
+    <Route path="/lancamentos" component={Lancamentos} onEnter={onEnterPrivatePage} />
     <Route exact path="/" component={Login} onEnter={onEnterPublicPage} />
     <Route path="*" component={NotFound} />
   </Router>
@@ -39,10 +39,8 @@ export const onAuthChange = (isAuthenticated) =>{
   const IsAuthenticatedPage = authenticatedPages.includes(pathname);
 
   if (IsUnauthenticatedPage && isAuthenticated) {
-    browserHistory.replace("/links");
+    browserHistory.replace("/lancamentos");
   } else if (IsAuthenticatedPage && !isAuthenticated) {
     browserHistory.replace("/");
   }
-
-  console.log('Meteor.userId();', Meteor.userId());
 }
